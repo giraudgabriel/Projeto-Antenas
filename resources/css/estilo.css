@@ -1,0 +1,27 @@
+.takeoff{
+    color:white;
+    background-color: #a70000;
+}
+.nav-takeoff{
+    color:#8D56FC;
+    background-color:gainsboro;
+    box-shadow: 0 0 0 0.2rem #a70000;
+}
+.input-takeoff{
+    background-color:white;
+}
+.input-takeoff:focus {
+    color:#8D56FC;
+    border-color:white;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #a70000;
+}
+.takeoff:focus {
+    color:white;
+    border-color:white;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #a70000;
+}
+body{
+    padding-top: 150px;
+} 
