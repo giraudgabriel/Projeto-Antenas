@@ -12,5 +12,14 @@ app.config(function($routeProvider) {
     .when("/login", {
       templateUrl : "./login/login.html"
     })
-    .otherwise({redirectTo:'/'})
+    .when("/projeto",{
+      templateUrl : "./admin/admin.html"
+    })
+    .when("/cad",{
+      templateUrl: "./cad/cad.html"
+    })
+    .when("/empresario",{
+      templateUrl: "./empresario/empresario.html"
+    })
+    .otherwise({redirectTo:'/'});
 })
