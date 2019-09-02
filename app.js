@@ -1,1 +1,1 @@
-var app = angular.module("fatecApp", ["NgRoute"]); 
+var app = angular.module("fatecApp", ["ngRoute"]); 
