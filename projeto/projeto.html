@@ -1,21 +1,35 @@
-
-
-<div class="card takeoff">
-    <div class="card-header">Teste</div>
+<div class="card">
+    <div class="card-header" ng-class="DefinirClasseProjeto(projeto)">
+        <div class="input-group">
+            <input type="text" ng-init="editar = false" ng-model="projeto.titulo" style="color:White"
+                placeholder="Clique para editar" ng-click="editar = !editar" ng-disabled="!editar" class="form-control"
+                ng-class="DefinirClasseProjeto(projeto)">
+            <div class="input-group-btn">
+                <button class="btn btn-default"><i
+                        ng-class="{'fa fa-edit':!editar ,'fa fa-check': editar}"></i></button>
+            </div>
+        </div>
+    </div>
     <div class="card-body">
         <div class="row">
-            <table class="table table-responsive table-bordered">
-                    <thead>
-                        <th>Nome</th>
-                        <th>Descrição</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Nome</td>
-                            <td>Descrição</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="col-sm-6 ">
+                <div class="progress" style="height:30px;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated"
+                        ng-class="DefinirClasseProjeto(projeto)" ng-click="AlterarStatus(projeto)" role="progressbar"
+                        aria-valuenow="75" aria-valuemin="0" style="width:75%;cursor:pointer; height: 30px"
+                        aria-valuemax="100"> {{DefinirStatusProjeto(projeto)}}</div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label class="btn btn-sm" ng-class='DefinirBotaoProjeto(projeto)'><i class="fa fa-calendar"></i></i>
+                    12/09/2019
+                    20:37</label>
+                <label class="btn btn-sm" ng-class='DefinirBotaoProjeto(projeto)'><i class="fa fa-users"></i></i> 40
+                    participantes</label>
+                <label class="btn btn-sm" ng-class='DefinirBotaoProjeto(projeto)'><i class="fa fa-info"></i><i
+                        class="fa fa-info"></i></label>
+            </div>
+        </div>
     </div>
 </div>
 </div>
