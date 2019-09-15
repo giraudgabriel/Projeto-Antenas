@@ -1,7 +1,8 @@
-<div class="container" ng-controller="loginCtrl">
+<div class="container">
     <div class="container bg-light border takeoff rounded">
         <div class="col-sm-12">
-            <h3 class="text-center" style="color:black">Login</h3>
+            <h3 class="text-center" style="color:black" ng-show="login">Login</h3>
+            <h3 class="text-center" style="color:black" ng-hide="login">Cadastro</h3>
         </div>
         <br>
         <div class="row">
@@ -18,6 +19,19 @@
                     </div>
                     <br>
                 </div>
+                 <div class="col-sm-12" ng-hide="login">
+                    <div class="input-group">
+                        <div class="input-group-append">
+                            <button class="btn btn-default" style="border-radius: 10%" tabindex="2"
+                                data-toggle="tooltip" data-placement="top" title="Digite seu CPF">
+                                <i class="fa fa-user" style="font-size:17px"></i>
+                            </button>
+                        </div>
+                        <input type="text" tabindex="0" class="form-control" ng-model="user.cpf"
+                            placeholder="CPF" data-toggle="tooltip" data-placement="top" title="Digite seu cpf">
+                    </div>
+                    br
+                </div>
                 <div class="col-sm-12">
                     <div class="input-group">
                         <div class="input-group-append">
@@ -32,15 +46,19 @@
                 </div>
                 <br>
                 <div class="col-sm-12">
-                    <button tabindex="0" class="btn btn-block" ng-class="definirCorBotao(user)" data-toggle="tooltip"
-                        title="Clique para entrar" data-placement="bottom">Entrar
+                    <button tabindex="0" class="btn btn-block btn-primary" ng-class="definirCorBotao(user)" data-toggle="tooltip"
+                        title="Clique para entrar" ng-click="login = false" data-placement="bottom">Cadastrar
+                        <i class="fa fa-edit"></i>
+                    </button>
+
+                    <button tabindex="0" class="btn btn-block btn-success" ng-class="definirCorBotao(user)" data-toggle="tooltip"
+                        title="Clique para entrar" ng-click="login = true" data-placement="bottom">Entrar
                         <i class="fa fa-sign-in"></i>
                     </button>
+                    
                 </div>
                 <br>
-                <div class="col-sm-12">
-
-                </div>
+         
             </div>
             <br>
         </div>

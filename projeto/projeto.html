@@ -2,10 +2,10 @@
     <div class="card-header" ng-class="DefinirClasseProjeto(projeto)">
         <div class="input-group">
             <input type="text" ng-init="editar = false" ng-model="projeto.titulo" style="color:White"
-                placeholder="Clique para editar" ng-click="editar = !editar" ng-disabled="!editar" class="form-control"
-                ng-class="DefinirClasseProjeto(projeto)">
+                placeholder="Clique para editar"  ng-disabled="!editar" class="form-control"
+                >
             <div class="input-group-btn">
-                <button class="btn btn-default"><i
+                <button class="btn btn-warning" ng-click="editar = !editar"><i
                         ng-class="{'fa fa-edit':!editar ,'fa fa-check': editar}"></i></button>
             </div>
         </div>
@@ -26,8 +26,7 @@
                     20:37</label>
                 <label class="btn btn-sm" ng-class='DefinirBotaoProjeto(projeto)'><i class="fa fa-users"></i></i> 40
                     participantes</label>
-                <label class="btn btn-sm" ng-class='DefinirBotaoProjeto(projeto)'><i class="fa fa-info"></i><i
-                        class="fa fa-info"></i></label>
+          
             </div>
         </div>
     </div>
