@@ -3,8 +3,14 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
-            <div class="text-left">
-                <i class="fa fa-list"></i>
+            <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+                <div uib-slide  index="1">
+                    <img ng-src="http://fatecsjc.edu.br/images/cadi/logo_cadi.png" style="margin:auto;">
+                    <div class="carousel-caption">
+                        <h4>Slide </h4>
+                        <p>texto </p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-sm-6">
@@ -15,3 +21,4 @@
     </div>
 
 </div>
+<rodape></rodape>

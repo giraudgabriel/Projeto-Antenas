@@ -2,8 +2,7 @@
     <div class="card-header" ng-class="DefinirClasseProjeto(projeto)">
         <div class="input-group">
             <input type="text" ng-init="editar = false" ng-model="projeto.titulo" style="color:White"
-                placeholder="Clique para editar"  ng-disabled="!editar" class="form-control"
-                >
+                placeholder="Clique para editar" ng-disabled="!editar" class="form-control">
             <div class="input-group-btn">
                 <button class="btn btn-warning" ng-click="editar = !editar"><i
                         ng-class="{'fa fa-edit':!editar ,'fa fa-check': editar}"></i></button>
@@ -11,6 +10,17 @@
         </div>
     </div>
     <div class="card-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <textarea class="form-control" ng-disabled="!editar">
+        Descrição
+                        </textarea>
+            </div>
+            <div class="col-sm-6">
+                <a class="form-control" href="www.fatec.sjc.sp.gov.br">FATEC</a>
+            </div>
+        </div>
+        <br>
         <div class="row">
             <div class="col-sm-6 ">
                 <div class="progress" style="height:30px;">
@@ -21,12 +31,16 @@
                 </div>
             </div>
             <div class="col-sm-6">
-                <label class="btn btn-sm" ng-class='DefinirBotaoProjeto(projeto)'><i class="fa fa-calendar"></i></i>
+                <!-- <label class="btn btn-sm" ng-class='DefinirBotaoProjeto(projeto)'><i class="fa fa-calendar"></i></i>
                     12/09/2019
                     20:37</label>
                 <label class="btn btn-sm" ng-class='DefinirBotaoProjeto(projeto)'><i class="fa fa-users"></i></i> 40
-                    participantes</label>
-          
+                    participantes</label> -->
+                <label class="btn btn-sm btn-success" ng-click="projeto.status = 4"><i class="fa fa-check"></i></i>
+                    Aprovar</label>
+                <label class="btn btn-sm btn-danger" ng-click="projeto.status = 3"><i class="fa fa-times"></i></i>
+                    Reprovar</label>
+                    <input type="text" class="form-control btn-outline-danger" ng-show="projeto.status == 3" ng-disabled="!editar" ng-model="projeto.feedback">
             </div>
         </div>
     </div>
