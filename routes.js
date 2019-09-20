@@ -19,7 +19,17 @@ app.config(function($routeProvider) {
       templateUrl: "./cad/cad.html"
     })
     .when("/empresario",{
-      templateUrl: "./empresario/empresario.html"
+      templateUrl: "./empresario/empresario.html",
+      controller:"empresarioCtrl",
+      controllerAs:"ctrl"
+    })
+    .when("/aluno",{
+      templateUrl:"./aluno/aluno.html",
+      controller:"empresarioCtrl"
+    })
+    .when("/professor",{
+      templateUrl:"./professor/professor.html",
+      controller:"empresarioCtrl"
     })
     .otherwise({redirectTo:'/'});
 })

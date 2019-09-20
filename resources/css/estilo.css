@@ -3,7 +3,7 @@
     background-color: #a70000;
 }
 .nav-takeoff{
-    color:#8D56FC;
+    color: #a70000;
     background-color:gainsboro;
     box-shadow: 0 0 0 0.2rem #a70000;
 }
@@ -11,7 +11,7 @@
     background-color:white;
 }
 .input-takeoff:focus {
-    color:#8D56FC;
+    color: #a70000;
     border-color:white;
     outline: 0;
     box-shadow: 0 0 0 0.2rem #a70000;

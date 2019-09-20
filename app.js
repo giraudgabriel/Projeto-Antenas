@@ -1,1 +1,1 @@
-var app = angular.module("fatecApp", ["ngRoute"]); 
+var app = angular.module("fatecApp", ["ngRoute","cgNotify"]); 

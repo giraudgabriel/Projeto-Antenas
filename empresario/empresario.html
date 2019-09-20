@@ -1,84 +1,99 @@
-<menu></menu>
+<menu tipo="'e'"></menu>
 <div class="container">
   <div id="accordion">
     <div class="card">
-        <h5 class="mb-0 ">
-          <button class="btn btn-block btn-success" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Novo Projeto <i class="fa fa-plus"></i>
-          </button>
-        </h5>
-  
+      <h5 class="mb-0 ">
+        <button class="btn btn-block btn-success" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+          aria-controls="collapseOne">
+          Novo Projeto <i class="fa fa-plus"></i>
+        </button>
+      </h5>
+
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
         <div class="card-body">
-        <div class="container">
-      <div class="container rounded">
-          <div class="row">
-              <div class="col-sm-12">
+          <div class="container">
+            <div class="container rounded">
+              <div class="row">
+                <div class="col-sm-12">
                   <div class="container">
-                      <div class="input-group">
-                          <div class="input-group-append" data-toggle="tooltip" data-placement="top"
-                              title="Título" tabindex="-1">
-                              <button class="btn btn-default" style="border-radius: 10%"><i class="fa fa-info"
-                                     ></i></button>
-                          </div>
-                          <input type="text" ng-model="project.title" data-toggle="tooltip" data-placement="top"
-                              title="Digite o título" tabindex="0" class="form-control" placeholder="Título" required autofocus>
+                    <div class="input-group">
+                      <div class="input-group-append" data-toggle="tooltip" data-placement="top" title="Título"
+                        tabindex="-1">
+                        <button class="btn btn-default" style="border-radius: 10%"><i class="fa fa-info"></i> *</button>
                       </div>
-                      <br>
+                      <input type="text" ng-model="projeto.titulo" data-toggle="tooltip" data-placement="top"
+                        title="Digite o título" tabindex="0" class="form-control" placeholder="Título" required
+                        autofocus>
+                    </div>
+                    <br>
                   </div>
-                   <div class="col-sm-12" ng-hide="login">
-                      <div class="input-group">
-                          <div class="input-group-append">
-                              <button class="btn btn-default" style="border-radius: 10%" tabindex="2"
-                                  data-toggle="tooltip" data-placement="top" title="Descrição">
-                                  <i class="fa fa-list" ></i>
-                              </button>
-                          </div>
-                          <textarea class="form-control" placeholder="Descrição" ng-model="project.description">
+                  <div class="col-sm-12" ng-hide="login">
+                    <div class="input-group">
+                      <div class="input-group-append">
+                        <button class="btn btn-default" style="border-radius: 10%" tabindex="2" data-toggle="tooltip"
+                          data-placement="top" title="Descrição">
+                          <i class="fa fa-list"></i> *
+                        </button>
+                      </div>
+                      <textarea class="form-control" placeholder="Descrição" ng-bind="projeto.descricao"
+                        ng-model="projeto.descricao">
                           </textarea>
-                      </div>
-                      <br>
+                    </div>
+                    <br>
                   </div>
                   <div class="col-sm-12">
-                      <div class="input-group">
-                          <div class="input-group-append">
-                              <button class="btn btn-default" style="border-radius: 10%" tabindex="2"
-                                  data-toggle="tooltip" data-placement="top" title="Url">
-                                  <i class="fa fa-link" ></i>
-                              </button>
-                          </div>
-                          <input type="text" tabindex="0" class="form-control" ng-model="project.url"
-                              placeholder="Url Externa" data-toggle="tooltip" data-placement="top" title="Digite uma url externa">
+                    <div class="input-group">
+                      <div class="input-group-append">
+                        <button class="btn btn-default" style="border-radius: 10%" tabindex="2" data-toggle="tooltip"
+                          data-placement="top" title="Url">
+                          <i class="fa fa-link"></i>
+                        </button>
                       </div>
+                      <input type="text" tabindex="0" class="form-control" ng-model="projeto.url"
+                        placeholder="Url Externa" data-toggle="tooltip" data-placement="top"
+                        title="Digite uma url externa">
+                    </div>
                   </div>
                   <br>
                   <div class="col-sm-12">
-                      <button tabindex="0" class="btn btn-block btn-success"  data-toggle="tooltip"
-                          title="Salvar"  data-placement="bottom">Salvar
-                          <i class="fa fa-save"></i>
-                      </button>
-                      
+                    <button tabindex="0" ng-click="addProjeto(projeto)" class="btn btn-block btn-success"
+                      data-toggle="tooltip" title="Salvar" data-placement="bottom">Salvar
+                      <i class="fa fa-save"></i>
+                    </button>
+
                   </div>
                   <br>
-           
+
+                </div>
+                <br>
               </div>
-              <br>
+            </div>
           </div>
-      </div>
-  </div>
         </div>
       </div>
     </div>
     <div class="card">
-        <h5 class="mb-0">
-          <button class="btn btn-primary btn-block collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Projetos <i class="fa fa-users"></i>
-          </button>
-        </h5>
+      <h5 class="mb-0">
+        <button class="btn btn-primary btn-block collapsed" data-toggle="collapse" data-target="#collapseTwo"
+          aria-expanded="false" aria-controls="collapseTwo">
+          Projetos
+          <i class="fa fa-users"></i>
+        </button>
+      </h5>
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
         <div class="card-body">
-          <projeto></projeto>
-          <nav aria-label="Page navigation example">
+          <div class="row text-center">
+            <div class="container">
+              <label class="text-center alert alert-danger" ng-show="projetos.length == 0"> Nenhum projeto encontrado <i
+                  class="fa fa-times"></i></label>
+                  <input type="text" ng-show="projetos.length > 0" name="filtro" id="filtro" class="form-control" placeholder="Buscar ...">
+            </div>
+
+            <div class="col-sm-4" ng-repeat="p in projetos |filter:filtro">
+              <projeto as="p"></projeto>
+            </div>
+          </div>
+          <nav aria-label="Page navigation example" ng-show="projetos.length > 0">
             <ul class="pagination">
               <li class="page-item"><a class="page-link" href="">Anterior</a></li>
               <li class="page-item"><a class="page-link" href="">1</a></li>
@@ -90,7 +105,7 @@
         </div>
       </div>
     </div>
-   
+
   </div>
 
 </div>

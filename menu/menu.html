@@ -1,6 +1,27 @@
-<nav class="navbar navbar-expand-sm bg-light navbar-light nav-takeoff fixed-top">
+<nav class="navbar navbar-expand-sn navbar-light bg-light nav-takeoff fixed-top">
     <a class="navbar-brand" href="#">
-        <img src="https://fatecsjc-prd.azurewebsites.net/images/logo/fatecsjc_10_anos_400x192.png" class="img-fluid"
-            style="width: 35%" alt="logo">
+        <h4 class=" alert"> <img
+                src="https://fatecsjc-prd.azurewebsites.net/images/logo/fatecsjc_10_anos_400x192.png"  class="img-fluid alert"
+                style="width: 140px;height: 70px;background-color:white;margin-bottom: 0" alt="logo"> {{user}}</h4>
     </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <div class="btn-group pull-right">
+                    <button href="#/ajuda" class="btn btn-default">
+                        <i class="fa fa-question-circle"></i>
+                    </button>
+                    <button href="#/" class="btn takeoff">
+                        <i class="fa fa-power-off"></i>
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>
 </nav>

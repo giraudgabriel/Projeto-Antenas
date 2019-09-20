@@ -1,26 +1,80 @@
-app.controller("projetoCtrl", function ($scope) {
-    $scope.projeto = {
+app.controller("projetoCtrl", function ($scope, $rootScope) {
+    $scope.model = {
         titulo: null,
         descricao: null,
-        status: 1
+        status: 1,
+        url: null,
+        feedback: null
     }
+    $rootScope.status = {
+        Rejeitado: -1,
+        EmAnalise: 1,
+        AguardandoInfo: 2,
+        EsperaReuniao: 3,
+        EmDesenvolvimento: 4,
+        Finalizado: 0
+    }
+    if ($scope.as != null)
+        $scope.model = $scope.as
 
     $scope.DefinirClasseProjeto = (projeto) => {
-        return projeto.status == 1 ? 'bg-primary' : projeto.status == 2 ? 'bg-warning' : projeto.status == 3 ? 'bg-danger' : 'bg-success'
+        switch (projeto.status) {
+            case $rootScope.status.Rejeitado:
+                return 'bg-danger'
+            case $rootScope.status.EmAnalise:
+            case $rootScope.status.AguardandoInfo:
+            case $rootScope.status.EsperaReuniao:
+                return 'bg-warning'
+            case $rootScope.status.EmDesenvolvimento:
+                return 'bg-primary'
+            case $rootScope.status.Finalizado:
+                return 'bg-success'
+            default:
+                break;
+        }
     }
 
     $scope.DefinirStatusProjeto = (projeto) => {
-        return projeto.status == 1 ? 'Em desenvolvimento' : projeto.status == 2 ? 'Em análise' : projeto.status == 3 ? 'Rejeitado' : 'Concluído'
+        switch (projeto.status) {
+            case $rootScope.status.Rejeitado:
+                return 'Rejeitado'
+            case $rootScope.status.EmAnalise:
+            case $rootScope.status.AguardandoInfo:
+            case $rootScope.status.EsperaReuniao:
+                return `Em análise parte:${projeto.status}`
+            case $rootScope.status.EmDesenvolvimento:
+                return 'Em desenvolvimento'
+            case $rootScope.status.Finalizado:
+                return 'Finalizado'
+            default:
+                break;
+        }
     }
 
     $scope.DefinirBotaoProjeto = (projeto) => {
-        return projeto.status == 1 ? 'btn-outline-primary' : projeto.status == 2 ? 'btn-outline-warning' : projeto.status == 3 ? 'btn-outline-danger' : 'btn-outline-success'
+        switch (projeto.status) {
+            case $rootScope.status.Rejeitado:
+                return 'btn-outline-danger'
+            case $rootScope.status.EmAnalise:
+            case $rootScope.status.AguardandoInfo:
+            case $rootScope.status.EsperaReuniao:
+                return 'bg-outline-warning'
+            case $rootScope.status.EmDesenvolvimento:
+                return 'bg-outline-primary'
+            case $rootScope.status.Finalizado:
+                return 'btn-outline-success'
+            default:
+                break;
+        }
     }
 
+    $scope.AdicionarGit = (projeto) => {
+        $rootScope.projetoSelecionado = projeto;
+    }
     $scope.AlterarStatus = (projeto) => {
         if (projeto.status < 4)
             projeto.status += 1
         else
-            projeto.status = 1
+            projeto.status = -1
     }
 })

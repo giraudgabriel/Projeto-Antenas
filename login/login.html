@@ -1,4 +1,3 @@
-<div class="container">
     <div class="container bg-light border takeoff rounded">
         <div class="col-sm-12">
             <h3 class="text-center" style="color:black" ng-show="login">Login</h3>
@@ -15,7 +14,7 @@
                                     style="font-size:11px"></i></button>
                         </div>
                         <input type="text" ng-model="user.usuario" data-toggle="tooltip" data-placement="top"
-                            title="Digite seu e-mail" tabindex="0" class="form-control" placeholder="E-mail" autofocus>
+                            title="Digite seu e-mail" tabindex="0" class="form-control" placeholder="{{form.email.placeholder}}" autofocus>
                     </div>
                     <br>
                 </div>
@@ -46,7 +45,7 @@
                 </div>
                 <br>
                 <div class="col-sm-12">
-                    <button tabindex="0" class="btn btn-block btn-primary" ng-class="definirCorBotao(user)" data-toggle="tooltip"
+                    <button tabindex="0" class="btn btn-block btn-primary" ng-hide="!cadastrar" ng-class="definirCorBotao(user)" data-toggle="tooltip"
                         title="Clique para entrar" ng-click="login = false" data-placement="bottom">Cadastrar
                         <i class="fa fa-edit"></i>
                     </button>
@@ -63,4 +62,3 @@
             <br>
         </div>
     </div>
-</div>
