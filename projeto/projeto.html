@@ -17,8 +17,8 @@
             <div class="col-sm-6">
                 <div class="input-group">
                     <div class="input-group-btn">
-                        <a class="btn btn-default" ng-show="model.url" ng-href="http://{{model.url}}"><i
-                                class="fa fa-link"></i></a>
+                        <a class="btn btn-default" ng-show="model.url" title="{{model.url}}" ng-href="http://{{model.url}}"> <i
+                                class="fa fa-link"></i> Url </a>
                         <button class="btn btn-success" ng-hide="model.url || !e" ng-click="addurl = true">
                             Adicionar URL <i class="fa fa-link"></i>
                         </button>
@@ -42,10 +42,10 @@
             </div>
             <div class="col-sm-6">
                 <div class="row">
-                    <div class="input-group" ng-show="model.status == -1 && cad">
+                    <div class="input-group" ng-show="model.status == -1">
                         <input type="text" ng-model="model.feedback" placeholder="Feedback da rejeição"
                             ng-disabled="!editar" class="form-control">
-                        <div class="input-group-btn">
+                        <div class="input-group-btn" ng-show="cad">
                             <button class="btn btn-outline-success" ng-click="editar = !editar"><i
                                     ng-class="{'fa fa-edit':!editar ,'fa fa-check': editar}"></i></button>
                         </div>

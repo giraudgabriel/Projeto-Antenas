@@ -10,12 +10,47 @@ app.controller("empresarioCtrl", function ($rootScope, notify, $rootScope) {
     }
 
     $rootScope.projetos = [{
-        titulo: "Projeto",
-        descricao: "Descrição",
-        status: $rootScope.status.EmDesenvolvimento,
-        url: "www.facebook.com",
-        feedback: null,
-    }]
+            titulo: "Projeto",
+            descricao: "Descrição",
+            status: $rootScope.status.EmDesenvolvimento,
+            url: "www.facebook.com",
+            feedback: null,
+        }, {
+            titulo: "Projeto 1",
+            descricao: "Descrição",
+            status: $rootScope.status.EmAnalise,
+            url: "www.facebook.com",
+            feedback: null,
+        },
+        {
+            titulo: "Projeto2",
+            descricao: "Descrição",
+            status: $rootScope.status.AguardandoInfo,
+            url: "www.facebook.com",
+            feedback: null,
+        },
+        {
+            titulo: "Projeto3",
+            descricao: "Descrição",
+            status: $rootScope.status.EsperaReuniao,
+            url: "www.facebook.com",
+            feedback: null,
+        },
+        {
+            titulo: "Projeto4",
+            descricao: "Descrição",
+            status: $rootScope.status.Rejeitado,
+            url: "www.facebook.com",
+            feedback: null,
+        },
+        {
+            titulo: "Projeto5",
+            descricao: "Descrição",
+            status: $rootScope.status.Finalizado,
+            url: "www.facebook.com",
+            feedback: null,
+        }
+    ]
 
     $rootScope.novoProjeto = () => {
         $rootScope.projeto = {
