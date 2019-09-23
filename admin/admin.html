@@ -1,2 +1,140 @@
-<menu></menu>
+<menu tipo="'admin'"></menu>
+<div class="container">
+    <div id="accordion">
+        <div class="card">
+            <h5 class="mb-0 ">
+                <button class="btn btn-block btn-success" data-toggle="collapse" data-target="#collapseOne"
+                    aria-exusuarionded="true" aria-controls="collapseOne">
+                    Cadastro Professores/Aluno <i class="fa fa-plus"></i>
+                </button>
+            </h5>
 
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-usuariorent="#accordion">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="container rounded">
+                            <div class="row">
+
+
+                                <div class="col-sm-12">
+                                    <div class="container">
+                                        <div class="input-group">
+                                            <div class="input-group-append" data-toggle="tooltip" data-placement="top"
+                                                title="Nome" tabindex="-1">
+                                                <button class="btn btn-default" style="border-radius: 10%"><i
+                                                        class="fa fa-user"></i></button>
+                                            </div>
+                                            <input type="text" ng-model="usuario.nome" data-toggle="tooltip"
+                                                data-placement="top" title="Digite o nome" tabindex="0"
+                                                class="form-control" style="color:black" placeholder="Nome" required
+                                                autofocus>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="container">
+                                        <div class="input-group">
+                                            <div class="input-group-append" data-toggle="tooltip" data-placement="top"
+                                                title="Email" tabindex="-1">
+                                                <button class="btn btn-default" style="border-radius: 10%"><i
+                                                        class="fa fa-envelope-o"></i></button>
+                                            </div>
+                                            <input type="email" ng-model="usuario.email" data-toggle="tooltip"
+                                                data-placement="top" title="Digite o e-mail" tabindex="0"
+                                                class="form-control" style="color:black"
+                                                placeholder="E-mail Institucional" required autofocus>
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="col-sm-12" ng-hide="login">
+                                        <div class="input-group">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-default" style="border-radius: 10%" tabindex="2"
+                                                    data-toggle="tooltip" data-placement="top" title="RG">
+                                                    <i class="fa fa-id-card"></i>
+                                                </button>
+                                            </div>
+                                            <input type="text" name="rg" id="rg" placeholder="RG" class="form-control"
+                                                ng-model="usuario.rg">
+                                        </div>
+                                        <br>
+                                    </div>
+
+                                    <div class="col-sm-12" ng-hide="login">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" ng-model="usuario.tipo" type="checkbox"
+                                                id="inlineCheckbox1" value="1">
+                                            <label class="form-check-label" for="inlineCheckbox1">Professor</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" ng-model="usuario.tipo"
+                                                id="inlineCheckbox2" value="2">
+                                            <label class="form-check-label" for="inlineCheckbox2">Aluno</label>
+                                        </div>
+                                    </div>
+
+                                    <br>
+                                    <div class="col-sm-12">
+                                        <button tabindex="0" class="btn btn-block btn-success" data-toggle="tooltip"
+                                            title="Salvar" data-placement="bottom" ng-click="salvarUsuario(usuario)">Salvar
+                                            <i class="fa fa-save"></i>
+                                        </button>
+
+                                    </div>
+                                    <br>
+
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h5 class="mb-0 ">
+                <button class="btn btn-block btn-primary" data-toggle="collapse" data-target="#collapseUsuarios"
+                    aria-exusuarionded="true" aria-controls="collapseUsuarios">
+                    Professores/Alunos <i class="fa fa-users"></i>
+                </button>
+            </h5>
+
+            <div id="collapseUsuarios" class="collapse show" aria-labelledby="headingOne" data-usuariorent="#accordion">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="container rounded">
+                            <div class="col-sm-12">
+                                <div class="input-group">
+                                    <input type="text" name="filtro" id="filtro" placeholder="Digite usuario a buscar..."
+                                        class="form-control" ng-model="filtro">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-default"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table bg-primary" style="color:white">
+                                    <thead>
+                                        <th>Nome</th>
+                                        <th>E-mail</th>
+                                        <th>RG</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="usuario in usuarios|filter:filtro">
+                                            <td>{{usuario.nome}}</td>
+                                            <td>{{usuario.email}}</td>
+                                            <td>{{usuario.rg}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -8,6 +8,7 @@ app.controller("empresarioCtrl", function ($rootScope, notify, $rootScope) {
         EmDesenvolvimento: 4,
         Finalizado: 0
     }
+    $rootScope.usuarios = []
 
     $rootScope.projetos = [{
             titulo: "Projeto",
@@ -62,6 +63,14 @@ app.controller("empresarioCtrl", function ($rootScope, notify, $rootScope) {
         }
     }
 
+    $rootScope.novoUsuario = () => {
+        $rootScope.usuario = {
+            nome: null,
+            email: null,
+            rg: null,
+        }
+    }
+
     $rootScope.novoProjeto()
 
     $rootScope.addProjeto = (projeto) => {
@@ -92,4 +101,35 @@ app.controller("empresarioCtrl", function ($rootScope, notify, $rootScope) {
         }
 
     }
+
+    $rootScope.salvarUsuario = (usuario) => {
+        if (usuario.nome == null || usuario.email == null || usuario.rg == null) {
+            notify({
+                classes: "alert-warning",
+                message: "Preencha os campos obrigatórios!"
+            })
+            return
+        }
+        if ($rootScope.usuarios.indexOf(usuario) == -1) {
+            $rootScope.usuarios.push(usuario)
+            notify({
+                classes: "alert-success",
+                message: "Salvo com sucesso!"
+            })
+            $('#collapseUsuarios').collapse("show")
+            $('#collapseOne').collapse("hide")
+            $rootScope.novoUsuario()
+
+        } else {
+            notify({
+                classes: "alert-danger",
+                message: "Já existe um registro com esses dados!"
+            })
+            $rootScope.novoUsuario()
+
+        }
+
+    }
+    $rootScope.novoUsuario()
+
 })
