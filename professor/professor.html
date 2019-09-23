@@ -92,23 +92,23 @@
                         <div class="container">
                             <label class="text-center alert alert-danger" ng-show="projetos.length == 0"> Nenhum projeto
                                 encontrado <i class="fa fa-times"></i></label>
-                            <input type="text" ng-show="projetos.length > 0" name="filtro" id="filtro"
+                            <input type="text" ng-show="projetos.length > 0" ng-model="filtro" name="filtro" id="filtro"
                                 class="form-control" placeholder="Buscar ...">
                         </div>
 
-                        <div class="col-sm-4" ng-repeat="p in projetos |filter:filtro">
+                        <div class="col-sm-6" ng-repeat="p in projetos |filter:filtro">
                             <projeto as="p" professor="true"></projeto>
                         </div>
                     </div>
-                    <nav aria-label="Page navigation example" ng-show="projetos.length > 0">
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="">Anterior</a></li>
-                            <li class="page-item"><a class="page-link" href="">1</a></li>
-                            <li class="page-item"><a class="page-link" href="">2</a></li>
-                            <li class="page-item"><a class="page-link" href="">3</a></li>
-                            <li class="page-item"><a class="page-link" href="">Próxima</a></li>
-                        </ul>
-                    </nav>
+
+                    <div class="row">
+                        <div style="margin-left:60%">
+                            <label class="badge badge-success">Finalizado</label>
+                            <label class="badge badge-danger">Rejeitado</label>
+                            <label class="badge badge-warning">Em análise</label>
+                            <label class="badge badge-primary">Em desenvolvimento</label>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -117,3 +117,4 @@
 
 
 </div>
+<rodape></rodape>

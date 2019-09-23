@@ -1,15 +1,15 @@
 <menu tipo="'c'"></menu>
 <div class="container">
     <div id="accordion">
-        <div class="card">
+        <div class="card" ng-show="true">
             <h5 class="mb-0 ">
                 <button class="btn btn-block btn-success" data-toggle="collapse" data-target="#collapseOne"
                     aria-expanded="true" aria-controls="collapseOne">
-                    Cadastro Professores/Aluno <i class="fa fa-plus"></i>
+                    Marcar Reunião <i class="fa fa-building"></i>
                 </button>
             </h5>
 
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div id="collapseOne" class="collapsed show" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body">
                     <div class="container">
                         <div class="container rounded">
@@ -18,31 +18,40 @@
                                     <div class="container">
                                         <div class="input-group">
                                             <div class="input-group-append" data-toggle="tooltip" data-placement="top"
-                                                title="Título" tabindex="-1">
+                                                title="Data" tabindex="-1">
                                                 <button class="btn btn-default" style="border-radius: 10%"><i
-                                                        class="fa fa-envelope-o"></i></button>
+                                                        class="fa fa-calendar"></i></button>
                                             </div>
-                                            <input type="email" ng-model="pa.email" data-toggle="tooltip"
-                                                data-placement="top" title="Digite o e-mail" tabindex="0"
-                                                class="form-control" style="color:black"
-                                                placeholder="E-mail Institucional" required autofocus>
+                                            <input type="date" ng-model="projetoSelecionado.reuniao.data"
+                                                data-toggle="tooltip" data-placement="top" title="Digite a data"
+                                                tabindex="0" class="form-control" style="color:black"
+                                                placeholder="Data da Reunião" required autofocus>
+                                            <div class="input-group-append" data-toggle="tooltip" data-placement="top"
+                                                title="Hora" tabindex="-1">
+                                                <button class="btn btn-default" style="border-radius: 10%"><i
+                                                        class="fa fa-clock-o"></i></button>
+                                            </div>
+                                            <input type="time" ng-model="projetoSelecionado.reuniao.hora"
+                                                data-toggle="tooltip" data-placement="top" title="Digite a hora"
+                                                tabindex="0" class="form-control" style="color:black"
+                                                placeholder="Hora da Reunião" required autofocus>
                                         </div>
                                         <br>
                                     </div>
-                                    <div class="col-sm-12" ng-hide="login">
-                                        <div class="input-group">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-default" style="border-radius: 10%" tabindex="2"
-                                                    data-toggle="tooltip" data-placement="top" title="RG">
-                                                    <i class="fa fa-id-card"></i>
-                                                </button>
-                                            </div>
-                                            <input type="text" name="rg" id="rg" placeholder="RG" class="form-control"
-                                                ng-model="pa.rg">
-                                        </div>
-                                        <br>
+                                    <div class="col-sm-12">
+                                        <label>Participantes:</label>
+                                        <select class="form-control" ng-model="projetoSelecionado.participantes"
+                                            multiple>
+                                            <optgroup label="Membros Cadi" data-max-options="2">
+                                                <option>Membro</option>
+                                            </optgroup>
+                                            <optgroup label="Professores" data-max-options="2">
+                                                <option>Sabha</option>
+                                                <option>Giuliano</option>
+                                                <option>Adriana</option>
+                                            </optgroup>
+                                        </select>
                                     </div>
-
                                     <br>
                                     <div class="col-sm-12">
                                         <button tabindex="0" class="btn btn-block btn-success" data-toggle="tooltip"
@@ -70,16 +79,20 @@
             </h5>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="card-body">
-                    <projeto cad="true"></projeto>
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="">Anterior</a></li>
-                            <li class="page-item"><a class="page-link" href="">1</a></li>
-                            <li class="page-item"><a class="page-link" href="">2</a></li>
-                            <li class="page-item"><a class="page-link" href="">3</a></li>
-                            <li class="page-item"><a class="page-link" href="">Próxima</a></li>
-                        </ul>
-                    </nav>
+                    <div class="row">
+                        <div class="col-sm-6" ng-repeat="p in projetos">
+                            <projeto cad="true" as="p"></projeto>
+                        </div>
+                    </div>
+
+                   <div class="row">
+                       <div style="margin-left:60%">
+                           <label class="badge badge-success">Finalizado</label>
+                           <label class="badge badge-danger">Rejeitado</label>
+                           <label class="badge badge-warning">Em análise</label>
+                           <label class="badge badge-primary">Em desenvolvimento</label>
+                       </div>
+                   </div>
                 </div>
             </div>
         </div>

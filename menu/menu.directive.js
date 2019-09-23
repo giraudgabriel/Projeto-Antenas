@@ -28,6 +28,10 @@ app.controller("menuCtrl", function ($scope) {
                 $scope.user = "Professor"
                 break
 
+            case 'admin':
+                $scope.user = "Admin"
+                break
+
         }
     }
 })

@@ -10,6 +10,34 @@ app.controller("empresarioCtrl", function ($rootScope, notify, $rootScope) {
     }
     $rootScope.usuarios = []
 
+    $rootScope.salvarGit = (projeto) => {
+        if (projeto.aluno.git && projeto.aluno.obs) {
+            let index = $rootScope.projetos.indexOf(p => {
+                return p.Titulo == projeto.Titulo
+            })
+            if (index > -1) {
+                projeto.status = $rootScope.status.Finalizado
+                $rootScope.projetos[index] = projeto
+                notify({
+                    classes: 'alert-success',
+                    message: 'Salvo com sucesso'
+                })
+                $rootScope.projetoSelecionado = null
+            } else {
+                notify({
+                    classes: "alert-danger",
+                    message: "Projeto não encontrado,favor atualizar a página!"
+                })
+            }
+        }
+
+    }
+
+    $rootScope.marcarReuniao = (projeto) => {
+        $rootScope.projetoSelecionado = projeto
+        $rootScope.reuniao = true
+    }
+
     $rootScope.projetos = [{
             titulo: "Projeto",
             descricao: "Descrição",
@@ -103,7 +131,7 @@ app.controller("empresarioCtrl", function ($rootScope, notify, $rootScope) {
     }
 
     $rootScope.salvarUsuario = (usuario) => {
-        if (usuario.nome == null || usuario.email == null || usuario.rg == null) {
+        if (usuario.nome == null || usuario.email == null || usuario.tipo == null) {
             notify({
                 classes: "alert-warning",
                 message: "Preencha os campos obrigatórios!"
