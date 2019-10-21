@@ -2,29 +2,29 @@ package antenas;
 
 public class Projeto {
 
-	private String chave;
-	private String dono;
+	private String key;
+	private String owner;
 	private String smallDesc;
 	private String externalLink;
 	//acrescentar todos os demais atributos do projeto que foram passados na fase de requisitos
 
-	public Projeto(String chave,String dono,String smallDesc,String externalLink) {
-		this.chave = chave;
-		this.dono = dono;
+	public Projeto(String key,String owner,String smallDesc,String externalLink) {
+		this.key = key;
+		this.owner = owner;
 		this.externalLink = externalLink;
 		this.smallDesc = smallDesc;
 	}
 
-	public String getChave() {
-		return chave;
+	public String getkey() {
+		return key;
 	}
 
-	public void setChave(String chave) {
-		this.chave = chave;
+	public void setkey(String key) {
+		this.key = key;
 	}
 
-	public String getDono(){
-		return dono;
+	public String getowner(){
+		return owner;
 	}
 
 	public String getSD(){
@@ -35,8 +35,7 @@ public class Projeto {
 		this.smallDesc = NewSD;
 	}
 
-	public String getLink()
-	{
+	public String getLink(){
 		return externalLink;
 	}
 
