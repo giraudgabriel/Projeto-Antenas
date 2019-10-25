@@ -1,18 +1,18 @@
 package antenas;
 
 public class Aluno {
-    private String nome;
+
     private DadosLogin dadosLogin;
     
-    public Aluno(String nome) {
-    	this.nome = nome;
+    public Aluno(DadosLogin dados) {
+    	this.dadosLogin = dados;
     }
 
-	public String getNome() {
-		return nome;
+	public DadosLogin getDadosLogin() {
+		return dadosLogin;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setDadosLogin(DadosLogin dadosLogin) {
+		this.dadosLogin = dadosLogin;
 	}
 }
