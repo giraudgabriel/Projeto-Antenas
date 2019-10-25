@@ -5,7 +5,6 @@ public class Empresario {
 	private String cpf;
 	private DadosLogin dadosLogin;
 	
-	
 	public Empresario(String cpf, DadosLogin dadosLogin) {
 		this.cpf = cpf;
 		this.dadosLogin = dadosLogin;

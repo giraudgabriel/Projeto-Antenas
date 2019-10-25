@@ -1,9 +1,10 @@
+package antenas;
 public class CADI
 {
     private String email;
     private String senha;
 
-    public cadi(String email,String senha) {
+    public CADI(String email,String senha) {
         this.email = email;
         this.senha = senha;
     }
@@ -14,10 +15,10 @@ public class CADI
     public void setEmail(String novoEmail){
         this.email = novoEmail;
     }
-    public getEmail(){
+    public String getEmail(){
         return email;
     }
-    public getSenha(){
+    public String getSenha(){
         return senha;
     }
 

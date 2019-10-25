@@ -15,7 +15,7 @@ class Teste {
 		
 		assertEquals(antenas.getEmpresarios().size(), 2);
 		
-		antenas.addProjeto(new Projeto("abc"));
+		antenas.addProjeto(new Projeto("abc", null, null, null));
 		
 		Projeto projeto = antenas.buscarProjetoPorChave("abc");
 
