@@ -3,8 +3,8 @@ public class CADI
 {
     private DadosLogin dadosLogin;
 
-    public CADI(String email,String senha) {
-        this.setDadosLogin(new DadosLogin(email,senha));
+    public CADI(DadosLogin dadosLogin) {
+        this.setDadosLogin(dadosLogin);
     }
 
 	public void setDadosLogin(DadosLogin dadosLogin) {
