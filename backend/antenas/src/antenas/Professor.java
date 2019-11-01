@@ -4,8 +4,8 @@ public class Professor {
 	
 	private DadosLogin dadosLogin;
 	
-	public Professor(String email, String senha) {
-		this.setDadosLogin(new DadosLogin(email,senha));
+	public Professor(DadosLogin dadosLogin) {
+		this.setDadosLogin(dadosLogin);
 	}
 	
 	public void setDadosLogin(DadosLogin dl) {

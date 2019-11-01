@@ -4,8 +4,8 @@ public class Aluno {
 
     private DadosLogin dadosLogin;
     
-    public Aluno(DadosLogin dados) {
-    	this.dadosLogin = dados;
+    public Aluno(DadosLogin dadosLogin) {
+    	this.setDadosLogin(dadosLogin);
     }
 
 	public DadosLogin getDadosLogin() {
