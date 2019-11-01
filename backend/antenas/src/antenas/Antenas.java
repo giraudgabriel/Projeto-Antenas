@@ -37,6 +37,18 @@ public class Antenas {
 		return this.empresarios;
 	}
 	
+	public List<CADI> getCadis(){
+		return this.cadis;
+	}
+	
+	public List<Professor> getProfessores(){
+		return this.professores;
+	}
+	
+	public List<Aluno> getAlunos(){
+		return this.alunos;
+	}
+	
 	public Projeto buscarProjetoPorChave(String chave) {
 		for(Projeto projeto:projetos) {
 			if(projeto.getChave().equals(chave)) return projeto;
