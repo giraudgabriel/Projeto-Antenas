@@ -9,7 +9,7 @@ public class Antenas {
 	private List<Projeto> projetos = new LinkedList<Projeto>();
 	private List<Aluno> alunos = new LinkedList<Aluno>();
 	private List<Professor> professores = new LinkedList<Professor>();
-	private List<CADI> membrosCADI = new LinkedList<CADI>();
+	private List<CADI> cadis = new LinkedList<CADI>();
 	
 		
 	public void addEmpresario(Empresario emp) {
@@ -22,7 +22,7 @@ public class Antenas {
 	}
 	
 	public void addCADI(CADI cadi) {
-		membrosCADI.add(cadi);
+		cadis.add(cadi);
 	}
 	
 	public void addAluno(Aluno aluno) {
@@ -48,6 +48,27 @@ public class Antenas {
 	public Empresario loginEmpresario(DadosLogin dl) {
 		for(Empresario empresario:empresarios) {
 			if(empresario.getDadosLogin().compararDadosLogin(dl)) return empresario;
+		}
+		return null;
+	}
+	
+	public Aluno loginAluno(DadosLogin dl) {
+		for(Aluno aluno:alunos) {
+			if(aluno.getDadosLogin().compararDadosLogin(dl)) return aluno;
+		}
+		return null;
+	}
+	
+	public CADI loginCADI(DadosLogin dl) {
+		for(CADI cadi: cadis) {
+			if(cadi.getDadosLogin().compararDadosLogin(dl)) return cadi;
+		}
+		return null;
+	}
+	
+	public Professor loginProfessor(DadosLogin dl) {
+		for(Professor professor: professores) {
+			if(professor.getDadosLogin().compararDadosLogin(dl)) return professor;
 		}
 		return null;
 	}

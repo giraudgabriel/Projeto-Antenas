@@ -11,8 +11,9 @@ public class Projeto {
 	private String link;
 	private String chave;
 	private List<Entrega> entregas = new LinkedList<Entrega>();
-	
-	//acrescentar todos os demais atributos do projeto que foram passados na fase de requisitos
+	private List<Aluno> alunos = new LinkedList<Aluno>();
+	private Professor professor;
+
 
 	public Projeto(String chave,String dono,String descricao,String link) {
 		this.chave = chave;
@@ -69,14 +70,16 @@ public class Projeto {
 		this.entregas.add(entrega);
 	}
 
+	public List<Aluno> getAlunos() {
+		return alunos;
+	}
 
-	
-	
+	public Professor getProfessor() {
+		return professor;
+	}
 
-
-	
-	
-	
-	
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
+	}
 	
 }

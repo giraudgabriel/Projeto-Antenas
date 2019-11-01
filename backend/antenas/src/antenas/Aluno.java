@@ -15,4 +15,5 @@ public class Aluno {
 	public void setDadosLogin(DadosLogin dadosLogin) {
 		this.dadosLogin = dadosLogin;
 	}
+
 }

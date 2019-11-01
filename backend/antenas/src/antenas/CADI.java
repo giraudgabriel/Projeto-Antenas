@@ -1,26 +1,17 @@
 package antenas;
 public class CADI
 {
-    private String email;
-    private String senha;
+    private DadosLogin dadosLogin;
 
     public CADI(String email,String senha) {
-        this.email = email;
-        this.senha = senha;
+        this.setDadosLogin(new DadosLogin(email,senha));
     }
 
-    public void setSenha(String novaSenha){
-        this.senha = novaSenha;
-    }
-    public void setEmail(String novoEmail){
-        this.email = novoEmail;
-    }
-    public String getEmail(){
-        return email;
-    }
-    public String getSenha(){
-        return senha;
-    }
-
-
+	public void setDadosLogin(DadosLogin dadosLogin) {
+		this.dadosLogin = dadosLogin;
+	}
+	
+	public DadosLogin getDadosLogin() {
+		return this.dadosLogin;
+	}
 }

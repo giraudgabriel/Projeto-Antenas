@@ -4,10 +4,12 @@ public class Entrega {
 	private String urlGit;
 	private String urlDeploy;
 	private String texto;
+	private Aluno aluno;
 	
-	public Entrega(String urlGit, String urlDeploy, String texto) {
+	public Entrega(String urlGit, String urlDeploy, String texto, Aluno aluno) {
 		this.setUrlGit(urlGit);
 		this.setUrlDeploy(urlDeploy);
+		this.setAluno(aluno);
 		this.setTexto(texto);
 	}
 
@@ -33,5 +35,13 @@ public class Entrega {
 
 	public void setTexto(String texto) {
 		this.texto = texto;
+	}
+
+	public Aluno getAluno() {
+		return aluno;
+	}
+
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
 	}
 }
