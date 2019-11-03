@@ -6,7 +6,7 @@ import java.util.List;
 public class Projeto {
 
 
-	private String dono;
+	private Empresario empresario;
 	private String descricao;
 	private String link;
 	private String chave;
@@ -15,20 +15,20 @@ public class Projeto {
 	private Professor professor;
 
 
-	public Projeto(String chave,String dono,String descricao,String link) {
+	public Projeto(String chave,Empresario empresario,String descricao,String link) {
 		this.chave = chave;
-		this.dono = dono;
+		this.empresario = empresario;
 		this.descricao = descricao;
 		this.link = link;
 	}
 	
-	public String getDono() {
-		return dono;
+	public Empresario getEmpresario() {
+		return empresario;
 	}
 
 
-	public void setDono(String dono) {
-		this.dono = dono;
+	public void setEmpresario(Empresario empresario) {
+		this.empresario = empresario;
 	}
 
 
@@ -69,7 +69,11 @@ public class Projeto {
 	public void addEntrega(Entrega entrega) {
 		this.entregas.add(entrega);
 	}
-
+	
+	public void addAluno(Aluno aluno) {
+		this.alunos.add(aluno);
+	}
+	
 	public List<Aluno> getAlunos() {
 		return alunos;
 	}

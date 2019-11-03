@@ -14,4 +14,5 @@ public class CADI
 	public DadosLogin getDadosLogin() {
 		return this.dadosLogin;
 	}
+
 }
