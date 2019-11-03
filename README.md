@@ -6,6 +6,7 @@ com objetivo de analisar os requisitos funcionais e não funcionais do sistema a
 # Passo a passo para executar o frontend
 
 `npm install http-server`
+<br>
 `http-server caminho-da-pasta-front-end`
 
 # Passo a passo para executar o backend
