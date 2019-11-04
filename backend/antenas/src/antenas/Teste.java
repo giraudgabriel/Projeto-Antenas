@@ -2,6 +2,8 @@ package antenas;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 class Teste {
@@ -13,12 +15,16 @@ class Teste {
 		//empresario
 		
 		Empresario novoEmpresario = new Empresario("123", new DadosLogin("joao@gmail.com", "456"));
-		antenas.addEmpresario(novoEmpresario); //obviamente isso vai mudar porque o empresario...
+		antenas.addEmpresario(novoEmpresario);
 		
 		antenas.addProjeto(new Projeto("abc",novoEmpresario,null,null));
 		
 		Projeto projeto = antenas.buscarProjetoPorChave("abc");
-
+		
+		List<Projeto> projetosDoEmpresario = antenas.buscarProjetosPorEmpresario(novoEmpresario);
+		
+		assertEquals(projetosDoEmpresario.size(),1);
+		
 		assertEquals(projeto.getChave(), "abc");
 		
 		Empresario emp = antenas.loginEmpresario(new DadosLogin("joao@gmail.com", "456"));
@@ -53,6 +59,10 @@ class Teste {
 		
 		projeto.setProfessor(professor);
 		
+		List<Projeto> projetosDoProfessor = antenas.buscarProjetosPorProfessor(novoProfessor);
+		
+		assertEquals(projetosDoProfessor.size(), 1);
+		
 		assertEquals(professor,projeto.getProfessor());
 		
 		assertEquals(antenas.getProfessores().size(),1);
@@ -65,6 +75,10 @@ class Teste {
 		Aluno aluno = antenas.loginAluno(novoAluno.getDadosLogin());
 		
 		projeto.addAluno(aluno);
+		
+		List<Projeto> projetosDoAluno = antenas.buscarProjetosPorAluno(novoAluno);
+		
+		assertEquals(projetosDoAluno.size(), 1);
 		
 		assertEquals(aluno, projeto.getAlunos().get(0));
 		

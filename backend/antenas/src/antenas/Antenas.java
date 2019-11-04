@@ -2,6 +2,7 @@ package antenas;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Antenas {
 
@@ -56,7 +57,29 @@ public class Antenas {
 		return null;
 	}
 	
-	//2. Implemente o método _(loginEmpresario)_ e seu método de dependência _(compararDadosLogin)_ 
+	public List<Projeto> buscarProjetos(){
+		return this.projetos;
+	}
+	
+	public List<Projeto> buscarProjetosPorEmpresario(Empresario empresario) {
+		return projetos.stream()
+			    .filter(p -> p.getEmpresario() == empresario)
+			    .collect(Collectors.toList());
+	}
+	
+	
+	public List<Projeto> buscarProjetosPorProfessor(Professor professor) {
+		return projetos.stream()
+			    .filter(p -> p.getProfessor() == professor)
+			    .collect(Collectors.toList());
+	}
+	
+	public List<Projeto> buscarProjetosPorAluno(Aluno aluno) {
+		return projetos.stream()
+			    .filter(p -> p.getAlunos().equals(aluno))
+			    .collect(Collectors.toList());
+	}
+			
 	public Empresario loginEmpresario(DadosLogin dl) {
 		for(Empresario empresario:empresarios) {
 			if(empresario.getDadosLogin().compararDadosLogin(dl)) return empresario;

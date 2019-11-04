@@ -10,6 +10,7 @@ public class Projeto {
 	private String descricao;
 	private String link;
 	private String chave;
+	private int status;
 	private List<Entrega> entregas = new LinkedList<Entrega>();
 	private List<Aluno> alunos = new LinkedList<Aluno>();
 	private Professor professor;
@@ -20,6 +21,7 @@ public class Projeto {
 		this.empresario = empresario;
 		this.descricao = descricao;
 		this.link = link;
+		this.status = 1;
 	}
 	
 	public Empresario getEmpresario() {
@@ -84,6 +86,17 @@ public class Projeto {
 
 	public void setProfessor(Professor professor) {
 		this.professor = professor;
+	}
+	
+	public void setStatus(int status) {
+		this.status = status;
+	}
+	
+	public String getStatus() {
+		if(this.status == 0)
+			return "Desativado";
+		else
+			return "Fase " + this.status;
 	}
 	
 }
