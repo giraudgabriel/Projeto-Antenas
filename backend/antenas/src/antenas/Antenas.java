@@ -76,7 +76,7 @@ public class Antenas {
 	
 	public List<Projeto> buscarProjetosPorAluno(String aluno) {
 		return projetos.stream()
-			    .filter(p -> p.getAlunos().equals(aluno))
+			    .filter(p -> p.getAlunos().indexOf(aluno) > -1)
 			    .collect(Collectors.toList());
 	}
 			
