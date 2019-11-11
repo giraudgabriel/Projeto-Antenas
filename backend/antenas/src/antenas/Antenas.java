@@ -61,20 +61,20 @@ public class Antenas {
 		return this.projetos;
 	}
 	
-	public List<Projeto> buscarProjetosPorEmpresario(Empresario empresario) {
+	public List<Projeto> buscarProjetosPorEmpresario(String empresario) {
 		return projetos.stream()
-			    .filter(p -> p.getEmpresario() == empresario)
+			    .filter(p -> p.getEmpresario().equals(empresario))
 			    .collect(Collectors.toList());
 	}
 	
 	
-	public List<Projeto> buscarProjetosPorProfessor(Professor professor) {
+	public List<Projeto> buscarProjetosPorProfessor(String professor) {
 		return projetos.stream()
-			    .filter(p -> p.getProfessor() == professor)
+			    .filter(p -> p.getProfessor().equals(professor))
 			    .collect(Collectors.toList());
 	}
 	
-	public List<Projeto> buscarProjetosPorAluno(Aluno aluno) {
+	public List<Projeto> buscarProjetosPorAluno(String aluno) {
 		return projetos.stream()
 			    .filter(p -> p.getAlunos().equals(aluno))
 			    .collect(Collectors.toList());

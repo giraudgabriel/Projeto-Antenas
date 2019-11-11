@@ -6,17 +6,17 @@ import java.util.List;
 public class Projeto {
 
 
-	private Empresario empresario;
+	private String empresario;
 	private String descricao;
 	private String link;
 	private String chave;
 	private int status;
 	private List<Entrega> entregas = new LinkedList<Entrega>();
-	private List<Aluno> alunos = new LinkedList<Aluno>();
-	private Professor professor;
+	private List<String> emailsAlunos = new LinkedList<String>();
+	private String professor;
 
 
-	public Projeto(String chave,Empresario empresario,String descricao,String link) {
+	public Projeto(String chave,String empresario,String descricao,String link) {
 		this.chave = chave;
 		this.empresario = empresario;
 		this.descricao = descricao;
@@ -24,25 +24,21 @@ public class Projeto {
 		this.status = 1;
 	}
 	
-	public Empresario getEmpresario() {
+	public String getEmpresario() {
 		return empresario;
 	}
 
-
-	public void setEmpresario(Empresario empresario) {
+	public void setEmpresario(String empresario) {
 		this.empresario = empresario;
 	}
-
 
 	public String getDescricao() {
 		return descricao;
 	}
 
-
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
 
 	public String getLink() {
 		return link;
@@ -58,33 +54,31 @@ public class Projeto {
 		this.chave = chave;
 	}
 
-
-
 	public String getChave() {
-		return chave;
+		return this.chave;
 	}
 
 	public List<Entrega> getEntregas() {
-		return entregas;
+		return this.entregas;
 	}
 
 	public void addEntrega(Entrega entrega) {
 		this.entregas.add(entrega);
 	}
 	
-	public void addAluno(Aluno aluno) {
-		this.alunos.add(aluno);
+	public void addAluno(String emailAluno) {
+		this.emailsAlunos.add(emailAluno);
 	}
 	
-	public List<Aluno> getAlunos() {
-		return alunos;
+	public List<String> getAlunos() {
+		return this.emailsAlunos;
 	}
 
-	public Professor getProfessor() {
-		return professor;
+	public String getProfessor() {
+		return this.professor;
 	}
 
-	public void setProfessor(Professor professor) {
+	public void setProfessor(String professor) {
 		this.professor = professor;
 	}
 	
