@@ -16,8 +16,7 @@ public class Antenas {
 	public void addEmpresario(Empresario emp) {
 		empresarios.add(emp);
 	}
-	
-	
+		
 	public void addProjeto(Projeto proj) {
 		projetos.add(proj);
 	}
@@ -51,9 +50,8 @@ public class Antenas {
 	}
 	
 	public Projeto buscarProjetoPorChave(String chave) {
-		for(Projeto projeto:projetos) {
+		for(Projeto projeto:projetos) 
 			if(projeto.getChave().equals(chave)) return projeto;
-		}
 		return null;
 	}
 	
@@ -66,8 +64,7 @@ public class Antenas {
 			    .filter(p -> p.getEmpresario().equals(empresario))
 			    .collect(Collectors.toList());
 	}
-	
-	
+		
 	public List<Projeto> buscarProjetosPorProfessor(String professor) {
 		return projetos.stream()
 			    .filter(p -> p.getProfessor().equals(professor))
@@ -81,9 +78,8 @@ public class Antenas {
 	}
 			
 	public Empresario loginEmpresario(DadosLogin dl) {
-		for(Empresario empresario:empresarios) {
+		for(Empresario empresario:empresarios) 
 			if(empresario.getDadosLogin().compararDadosLogin(dl)) return empresario;
-		}
 		return null;
 	}
 	
@@ -95,18 +91,14 @@ public class Antenas {
 	}
 	
 	public CADI loginCADI(DadosLogin dl) {
-		for(CADI cadi: cadis) {
+		for(CADI cadi: cadis)
 			if(cadi.getDadosLogin().compararDadosLogin(dl)) return cadi;
-		}
 		return null;
 	}
 	
 	public Professor loginProfessor(DadosLogin dl) {
-		for(Professor professor: professores) {
+		for(Professor professor: professores) 
 			if(professor.getDadosLogin().compararDadosLogin(dl)) return professor;
-		}
 		return null;
-	}
-	
-	
+	}	
 }

@@ -48,6 +48,19 @@ class Teste {
 		
 		assertEquals(antenas.getCadis().size(),1);
 		
+		//Projeto
+		projeto.AprovarProjetoFase1();
+		assertEquals(projeto.getStatus(), "Fase 2");
+
+		projeto.AprovarProjetoFase2();
+		assertEquals(projeto.getStatus(), "Fase 3");
+		
+		projeto.ReprovarProjeto();
+		assertEquals(projeto.getStatus(), "Rejeitado");
+		
+		projeto.FinalizarProjeto();
+		assertEquals(projeto.getStatus(), "Finalizado");
+		
 		
 		//professor
 		
@@ -86,8 +99,7 @@ class Teste {
 		
 		projeto.addEntrega(new Entrega("github.com",null,null,aluno.getDadosLogin().getEmail()));
 		
-		assertEquals(projeto.getEntregas().size(),1);
-		
+		assertEquals(projeto.getEntregas().size(),1);		
 		
 	}
 

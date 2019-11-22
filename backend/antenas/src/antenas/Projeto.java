@@ -27,68 +27,69 @@ public class Projeto {
 	public String getEmpresario() {
 		return empresario;
 	}
-
+    
+	public void AprovarProjetoFase1() {
+		this.status = 2;
+	}
+	
+	public void AprovarProjetoFase2() {
+		this.status = 3;
+	}
+	
+	public void FinalizarProjeto() {
+		this.status = 0;
+	}
+	public void ReprovarProjeto() {
+		this.status = -1;
+	}
 	public void setEmpresario(String empresario) {
 		this.empresario = empresario;
 	}
-
 	public String getDescricao() {
 		return descricao;
 	}
-
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
 	public String getLink() {
 		return link;
 	}
-
-
 	public void setLink(String link) {
 		this.link = link;
 	}
-
-
 	public void setChave(String chave) {
 		this.chave = chave;
 	}
-
 	public String getChave() {
 		return this.chave;
 	}
-
 	public List<Entrega> getEntregas() {
 		return this.entregas;
 	}
-
 	public void addEntrega(Entrega entrega) {
 		this.entregas.add(entrega);
 	}
-	
 	public void addAluno(String emailAluno) {
 		this.emailsAlunos.add(emailAluno);
 	}
-	
 	public List<String> getAlunos() {
 		return this.emailsAlunos;
 	}
-
 	public String getProfessor() {
 		return this.professor;
 	}
-
 	public void setProfessor(String professor) {
 		this.professor = professor;
 	}
-	
 	public void setStatus(int status) {
 		this.status = status;
 	}
-	
+
 	public String getStatus() {
+		if(this.status == -1)
+			return "Rejeitado";
 		if(this.status == 0)
-			return "Desativado";
+			return "Finalizado";
 		else
 			return "Fase " + this.status;
 	}
